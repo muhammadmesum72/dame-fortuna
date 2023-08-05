@@ -14,7 +14,7 @@ const MintPage = () => {
     }
   }
   return (
-    <div id='mint' className='flex items-center gap-3'>
+    <div id='mint' className='flex flex-col md:flex-row items-center gap-3'>
       <div className='basis-1/2'>
           <img src={Nft} alt="" className='rounded-xl'  />
       </div>
