@@ -7,7 +7,7 @@ import Team4 from "../assets/woocommerce.png"
 const Partners = () => {
   const partners = [Team1, Team2, Team3, Team4]
   return (
-    <div className='flex w-full items-center justify-around'>
+    <div id='partners' className='flex w-full items-center justify-around'>
       {partners.map((partner) => (
         <img src={partner} alt="" className='opacity-60 hover:opacity-100 cursor-pointer hover:-translate-y-[1rem] transition-all ease-in-out duration-500' />
       ))}

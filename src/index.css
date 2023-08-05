@@ -12,6 +12,11 @@
     padding: 0;
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    
+}
+
+html{
+  scroll-behavior: smooth;
 }
 
 body{
@@ -36,4 +41,42 @@ body{
 
 
 
+  
+
+
+  /* Flipping CArds */
+
+  .card-container {
+    perspective: 1000px; /* Creates a 3D perspective for the card flip effect */
+    width: 300px; /* Set the width of the card container */
+  }
+  
+  .card {
+    width: 100%;
+    height: 300px; /* Set the height of the card */
+    transition: transform 0.6s; /* Add a smooth transition for the flip effect */
+    transform-style: preserve-3d; /* Ensures the child elements preserve their 3D transformations */
+    cursor: pointer; /* Change the cursor to indicate that it's clickable */
+  }
+  
+  .front,
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back side when not flipped */
+  }
+  
+  .front {
+    z-index: 2; /* Display the front side above the back side */
+  }
+  
+  .back {
+    transform: rotateY(180deg); /* Flips the back side, initially hidden */
+  }
+  
+  /* Add a hover effect to flip the card on mouseover */
+  .card:hover {
+    transform: rotateY(180deg);
+  }
   
