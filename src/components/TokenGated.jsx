@@ -17,7 +17,7 @@ const TokenGated = () => {
     },
   ];
   return (
-    <div id="tokenGated" className="w-full">
+    <div id="tokenGated" className="w-full pt-36">
       {walletNfts.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-3 mx-auto w-fit gap-24 ">
           {walletNfts.map((wNft) => (
@@ -25,7 +25,7 @@ const TokenGated = () => {
               <div class="card  ">
                 <div class="front  text-center flex flex-col items-center justify-center">
                   <img src={Card} alt="" className="w-48 mx-auto" />
-                  <div className="pt-3">{wNft.name}</div>
+                  <div className="pt-3 text-xl">{wNft.name}</div>
                 </div>
                 <div class="back text-center flex flex-col items-center justify-center">
                   <h1 className="text-xl font-bold">About Nft</h1>

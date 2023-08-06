@@ -14,17 +14,17 @@ const MintPage = () => {
     }
   }
   return (
-    <div id='mint' className='flex flex-col md:flex-row items-center gap-3'>
+    <div id='mint' className='flex flex-col md:flex-row items-center gap-3 pt-36'>
       <div className='basis-1/2'>
           <img src={Nft} alt="" className='rounded-xl'  />
       </div>
       <div className='basis-1/2'>
       <div className="text-center pb-6 space-y-4">
-          <div className="text-3xl">
+          <div className="text-2xl md:text-3xl">
             <span className="font-bold text-secondary">Total Supply: </span>
             <span className='text-primary'>2221</span>
           </div>
-          <div className="text-3xl">
+          <div className="text-2xl md:text-3xl">
             <span className="font-bold text-secondary">Current Price: </span>
             <span className='text-primary'>0.1 SOL</span>
           </div>

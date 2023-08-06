@@ -9,7 +9,7 @@ const Partners = () => {
   return (
     <div
       id="partners"
-      className="grid grid-cols-2 items-center md:flex  w-full items-center justify-around md:gap-0 gap-6 h-fit"
+      className="grid grid-cols-2 items-center md:flex  w-full items-center justify-around md:gap-0 gap-6 h-fit pt-36"
     >
       {partners.map((partner) => (
         <img

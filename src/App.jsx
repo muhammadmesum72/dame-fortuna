@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Header />
-    <div className="px-3 md:px-0 flex flex-col space-y-36 container mx-auto overflow-hidden ">
+    <div className="px-3 md:px-0 flex flex-col container mx-auto overflow-hidden ">
       <Hero />
       <MintPage />
       <TokenGated />
