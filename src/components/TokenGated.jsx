@@ -17,7 +17,7 @@ const TokenGated = () => {
     },
   ];
   return (
-    <div id="tokenGated" className="w-full pt-36">
+    <div id="tokenGated" className="w-full py-36  ">
       {walletNfts.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-3 mx-auto w-fit gap-24 ">
           {walletNfts.map((wNft) => (

@@ -1,10 +1,11 @@
 import React from "react";
 import {
-  AiFillFacebook,
-  AiFillInstagram,
   AiFillTwitterSquare,
-  AiFillYoutube,
+  
 } from "react-icons/ai";
+
+import {FaDiscord} from "react-icons/fa"
+import Gitbook from "../assets/gitbook.png"
 
 const Footer = () => {
   return (
@@ -22,16 +23,13 @@ const Footer = () => {
 
         <div className="basis-1/2 w-full flex items-center justify-center  text-4xl text-center gap-6">
           <a href="">
-            <AiFillFacebook />
+            <FaDiscord />
           </a>
           <a href="">
             <AiFillTwitterSquare />
           </a>
           <a href="">
-            <AiFillInstagram />
-          </a>
-          <a href="">
-            <AiFillYoutube />
+          <img src={Gitbook} alt="" className="w-9" />
           </a>
         </div>
       </div>

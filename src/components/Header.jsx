@@ -6,9 +6,14 @@ import {
   AiFillTwitterSquare,
   AiFillYoutube,
 } from "react-icons/ai";
+import { Link, useLocation } from "react-router-dom";
+import { FaDiscord } from "react-icons/fa";
+import Gitbook from "../assets/gitbook.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const path = useLocation().pathname
 
   const handleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -16,33 +21,38 @@ const Header = () => {
 
   const navLinks = [
     {
-      link: "#home",
+      link: "/",
       name: "Home",
     },
     {
-      link: "#mint",
+      link: "/mint",
       name: "Mint Page",
     },
     {
-      link: "#tokenGated",
+      link: "/tokenGated",
       name: "Token Gated",
     },
-    {
-      link: "#partners",
-      name: "Partners",
-    },
-    {
-      link: "#roadmap",
-      name: "Roadmap",
-    },
+    // {
+    //   link: "/#partners",
+    //   name: "Partners",
+    // },
+    // {
+    //   link: "/#roadmap",
+    //   name: "Roadmap",
+    // },
   ];
 
   return (
     <div
-      className={`z-10 flex items-center justify-between py-6 text-lg container px-3 md:px-0 mx-auto  bg-[#0a0822] shadow-lg fixed top-0 left-0 right-0`}
+    className="fixed top-0 left-0 right-0 bg-[#0a0822] z-10"
+      
     >
+      <div className={`  container flex items-center justify-between py-6 text-lg  px-3 md:px-0 mx-auto   shadow-lg `}>
+
       {/* logo */}
-      <div className="uppercase cursor-pointer">Logo</div>
+      <div className="uppercase cursor-pointer">
+        <Link to="/">Logo</Link>
+      </div>
       {/* Links */}
       <div className="block md:hidden cursor-pointer text-3xl">
         {isMenuOpen ? (
@@ -57,8 +67,8 @@ const Header = () => {
           `}
         >
           {navLinks.map((link) => (
-            <li className="hover:border-b-2 hover:border-white">
-              <a href={link.link}>{link.name}</a>
+            <li className={`${link.link === path && "border-b-2"} hover:border-b-2 hover:border-white`}>
+              <Link to={link.link}>{link.name}</Link>
             </li>
           ))}
         </ul>
@@ -66,36 +76,37 @@ const Header = () => {
 
       <div
         className={` ${
-          isMenuOpen ? "fixed top-0 left-0 opacity-100 " : "fixed top-0 left-full opacity-0"
+          isMenuOpen
+            ? "fixed top-0 left-0 opacity-100 "
+            : "fixed top-0 left-full opacity-0"
         } transition-all md:hidden ease-in-out duration-1000  h-screen w-full bg-black  -z-10`}
       >
         <ul
           className={`w-full h-full inline-flex gap-9 flex-col items-center justify-center `}
         >
           {navLinks.map((link) => (
-            <li className="hover:border-b-2 hover:border-white">
-              <a onClick={() => handleMenu()} href={link.link}>
+            <li className={`${link.link === path && "border-b-2"} hover:border-b-2 hover:border-white`}>
+              <Link onClick={() => handleMenu()} to={link.link}>
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
 
           <li className="flex text-3xl gap-3">
             <a href="">
-              <AiFillFacebook />
+              <FaDiscord />
             </a>
             <a href="">
               <AiFillTwitterSquare />
             </a>
             <a href="">
-              <AiFillInstagram />
-            </a>
-            <a href="">
-              <AiFillYoutube />
+              <img src={Gitbook} alt="" className="w-9" />
             </a>
           </li>
         </ul>
       </div>
+      </div>
+
     </div>
   );
 };
