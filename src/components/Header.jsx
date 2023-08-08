@@ -44,7 +44,7 @@ const Header = () => {
 
   return (
     <div
-    className="fixed top-0 left-0 right-0 bg-[#0a0822] z-10"
+    className="fixed top-0 left-0 right-0 bg-[#0a0822] z-10 bg-opacity-70"
       
     >
       <div className={`  container flex items-center justify-between py-6 text-lg  px-3 md:px-0 mx-auto   shadow-lg `}>
