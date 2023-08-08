@@ -16,10 +16,9 @@
 
 html{
   scroll-behavior: smooth;
-  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("./assets/bg.jpg");
+  background: linear-gradient(rgba(11,8,33,0.7),rgba(11,8,33,0.7)), url("./assets/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
 
 body{
