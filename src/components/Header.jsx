@@ -13,7 +13,7 @@ import Gitbook from "../assets/gitbook.png";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const path = useLocation().pathname
+  const path = useLocation().pathname;
 
   const handleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -43,70 +43,75 @@ const Header = () => {
   ];
 
   return (
-    <div
-    className="fixed top-0 left-0 right-0 bg-[#0b0821] z-10 bg-opacity-70"
-      
-    >
-      <div className={`  container flex items-center justify-between py-6 text-lg  px-3 md:px-0 mx-auto   shadow-lg `}>
-
-      {/* logo */}
-      <div className="uppercase cursor-pointer">
-        <Link to="/">Logo</Link>
-      </div>
-      {/* Links */}
-      <div className="block md:hidden cursor-pointer text-3xl">
-        {isMenuOpen ? (
-          <AiOutlineClose onClick={() => handleMenu()} />
-        ) : (
-          <AiOutlineMenu onClick={() => handleMenu()} />
-        )}
-      </div>
-      <div className="hidden md:block">
-        <ul
-          className={`w-full h-full inline-flex gap-9
-          `}
-        >
-          {navLinks.map((link) => (
-            <li className={`${link.link === path && "border-b-2"} hover:border-b-2 hover:border-white`}>
-              <Link to={link.link}>{link.name}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-
+    <div className="fixed top-0 left-0 right-0 bg-[#0b0821] z-[1000] bg-opacity-70">
       <div
-        className={` ${
-          isMenuOpen
-            ? "fixed top-0 left-0 opacity-100 "
-            : "fixed top-0 left-full opacity-0"
-        } transition-all md:hidden ease-in-out duration-1000  h-screen w-full bg-black  -z-10`}
+        className={`  container flex items-center justify-between py-6 text-lg  px-3 md:px-0 mx-auto   shadow-lg `}
       >
-        <ul
-          className={`w-full h-full inline-flex gap-9 flex-col items-center justify-center `}
+        {/* logo */}
+        <div className="uppercase cursor-pointer">
+          <Link to="/">Logo</Link>
+        </div>
+        {/* Links */}
+        <div className="block md:hidden cursor-pointer text-3xl">
+          {isMenuOpen ? (
+            <AiOutlineClose onClick={() => handleMenu()} />
+          ) : (
+            <AiOutlineMenu onClick={() => handleMenu()} />
+          )}
+        </div>
+        <div className="hidden md:block">
+          <ul
+            className={`w-full h-full inline-flex gap-9
+          `}
+          >
+            {navLinks.map((link) => (
+              <li
+                className={`${
+                  link.link === path && "border-b-2"
+                } hover:border-b-2 hover:border-white`}
+              >
+                <Link to={link.link}>{link.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div
+          className={` ${
+            isMenuOpen
+              ? "fixed top-0 left-0 opacity-100 "
+              : "fixed top-0 left-full opacity-0"
+          } transition-all md:hidden ease-in-out duration-1000  h-screen w-full bg-black  -z-10`}
         >
-          {navLinks.map((link) => (
-            <li className={`${link.link === path && "border-b-2"} hover:border-b-2 hover:border-white`}>
-              <Link onClick={() => handleMenu()} to={link.link}>
-                {link.name}
-              </Link>
+          <ul
+            className={`w-full h-full inline-flex gap-9 flex-col items-center justify-center `}
+          >
+            {navLinks.map((link) => (
+              <li
+                className={`${
+                  link.link === path && "border-b-2"
+                } hover:border-b-2 hover:border-white`}
+              >
+                <Link onClick={() => handleMenu()} to={link.link}>
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+
+            <li className="flex text-3xl gap-3">
+              <a href="">
+                <FaDiscord />
+              </a>
+              <a href="">
+                <AiFillTwitterSquare />
+              </a>
+              <a href="">
+                <img src={Gitbook} alt="" className="w-9" />
+              </a>
             </li>
-          ))}
-
-          <li className="flex text-3xl gap-3">
-            <a href="">
-              <FaDiscord />
-            </a>
-            <a href="">
-              <AiFillTwitterSquare />
-            </a>
-            <a href="">
-              <img src={Gitbook} alt="" className="w-9" />
-            </a>
-          </li>
-        </ul>
+          </ul>
+        </div>
       </div>
-      </div>
-
     </div>
   );
 };
