@@ -16,12 +16,16 @@ const Partners = () => {
       >
         {partners.map((partner) => (
           <img
+            data-aos="zoom-in"
             src={partner}
             alt=""
             className="h-6 md:h-12 mx-auto md:w-auto opacity-60 hover:opacity-100 cursor-pointer hover:-translate-y-[1rem] transition-all ease-in-out duration-500"
           />
         ))}
-        <div className="h-12 mx-auto md:w-auto opacity-60 hover:opacity-100 cursor-pointer hover:-translate-y-[1rem] transition-all ease-in-out duration-500 ">
+        <div
+          data-aos="zoom-in"
+          className="h-12 mx-auto md:w-auto opacity-60 hover:opacity-100 cursor-pointer hover:-translate-y-[1rem] transition-all ease-in-out duration-500 "
+        >
           <svg
             width="auto"
             height="32"

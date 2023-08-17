@@ -83,4 +83,18 @@ body{
   .card:hover {
     transform: rotateY(180deg);
   }
+
+
+  .about-img{
+    perspective: 1000px;
+    display: inline-block;
+    
+  }
+
+  .about-img img{
+    width: auto;
+    /* height: 150px; */
+    transform-origin: left center;
+    transform: perspective(1000px) rotateY(20deg);
+  }
   
