@@ -32,7 +32,7 @@ const TokenGated = () => {
                   <img src={Card} alt="" className="w-48 mx-auto" />
                   <div className="pt-3 text-xl">{wNft.name}</div>
                 </div>
-                <div class="back text-center flex flex-col items-center justify-center">
+                <div class="back text-justify flex flex-col items-center justify-center">
                   <h1 className="text-xl font-bold">About Nft</h1>
                   <p className="text-white text-sm">{wNft.desc}</p>
                 </div>
