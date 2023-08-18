@@ -6,18 +6,22 @@ import {
 
 import {FaDiscord} from "react-icons/fa"
 import Gitbook from "../assets/gitbook.png"
+import PolicyPdf from "../assets/PDFs/Dame Fortuna.pdf"
 
 const Footer = () => {
+  const handleOpenPdf = () => {
+    window.open(PolicyPdf, "_blank");
+  };
   return (
     <div id="footer" className="border-t border-white py-6  mt-36 text-xs md:text-auto" >
       <div className="flex flex-col md:flex-row gap-3 md:gap-0 px-3 md:px-0 items-center container mx-auto">
         <div className="basis-1/2 text-center md:text-left ">
-          <h2 className="text-xl font-bold  pb-3">LOGO</h2>
+          <h2 className="text-xl font-bold  pb-3 uppercase">dame fortuna</h2>
           <p className="">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A ipsa
-            quasi necessitatibus officiis sed laboriosam soluta reprehenderit
-            sit excepturi minus sapiente accusamus deserunt dolor autem, id nam
-            officia recusandae nihil!
+            <span>Join the Cosmic Community | </span>
+            <span>Learn More | </span>
+            <span className="cursor-pointer" onClick={() => handleOpenPdf()}>Privacy Policy | </span>
+            <span className="cursor-pointer" onClick={() => handleOpenPdf()}>Terms of Use</span>
           </p>
         </div>
 
@@ -34,7 +38,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className="text-center w-full pt-6">Copyright © 2023. All rights reserved.</p>
+      <p className="text-center w-full pt-6">Copyright Dame Fortuna © 2023. All rights reserved.</p>
     </div>
   );
 };

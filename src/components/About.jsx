@@ -3,13 +3,13 @@ import Card from "../assets/BullCard.png";
 
 const About = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center relative">
+    <div className="flex flex-col-reverse gap-6 md:gap-0 md:flex-row items-center justify-center relative">
       <div data-aos="fade-right" className="basis-1/2 w-full">
         <div className="about-img text-center w-full">
           <img
             src={Card}
             alt=""
-            className="absolute md:relative opacity-30 md:opacity-100  -z-10 h-96  mx-auto  "
+            className="opacity-100  h-96  mx-auto  "
           />
         </div>
       </div>
